@@ -4,7 +4,6 @@ import { Grid, ThemeProvider } from '@mui/material';
 import { theme } from '../styles/libs/Themes/Authorization';
 import RegistrationUI from './RegistrationUI';
 
-
 const Authorization = () => {
   const [isHaveAccount, setIsHaveAccount] = React.useState<Boolean>(true);
 

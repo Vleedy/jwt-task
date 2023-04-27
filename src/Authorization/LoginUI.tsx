@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { authorizationSchema} from '../utils/validation';
+import { authorizationSchema } from '../utils/validation';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -20,7 +20,7 @@ const LoginUI: React.FC<LoginUIProps> = ({ setIsHaveAccount }) => {
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: ''
+      password: '',
     },
     onSubmit: (values) => {
       console.log(values);
@@ -29,7 +29,7 @@ const LoginUI: React.FC<LoginUIProps> = ({ setIsHaveAccount }) => {
     validateOnChange: false,
     validateOnBlur: false,
   });
-    
+
   return (
     <form onSubmit={formik.handleSubmit} className="authorization__form">
       <AccountCircleIcon fontSize="large" />
@@ -38,42 +38,45 @@ const LoginUI: React.FC<LoginUIProps> = ({ setIsHaveAccount }) => {
         Зарегистрироваться
       </button>
       <TextField
-required
-fullWidth
-name="email"
-label="Введите email"
-variant="outlined"
-value={formik.values.email}
-onChange={formik.handleChange}
-error={formik.touched.email && Boolean(formik.errors.email)}
-helperText={formik.errors.email}
-/>
-<TextField
-name="password"
-value={formik.values.password}
-onChange={formik.handleChange}
-error={formik.touched.password && Boolean(formik.errors.password)}
-required
-fullWidth
-label="Введите пароль"
-type={showPassword ? 'text' : 'password'}
-variant="outlined"
-helperText={formik.errors.password}
-InputProps={{
-endAdornment: (
-<InputAdornment position="end">
-<IconButton
-             aria-label="toggle password visibility"
-             onClick={handleClickShowPassword}
-             onMouseDown={handleMouseDownPassword}
-             edge="end">
-{showPassword ? <VisibilityOff /> : <Visibility />}
-</IconButton>
-</InputAdornment>
-),
-}}
-/>
-      <Button type="submit" variant="contained">Войти</Button>
+        autoComplete="off"
+        required
+        fullWidth
+        name="email"
+        label="Введите email"
+        variant="outlined"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        error={formik.touched.email && Boolean(formik.errors.email)}
+        helperText={formik.errors.email}
+      />
+      <TextField
+        name="password"
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        error={formik.touched.password && Boolean(formik.errors.password)}
+        required
+        fullWidth
+        label="Введите пароль"
+        type={showPassword ? 'text' : 'password'}
+        variant="outlined"
+        helperText={formik.errors.password}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="end">
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+      <Button type="submit" variant="contained">
+        Войти
+      </Button>
     </form>
   );
 };

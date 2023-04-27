@@ -30,6 +30,7 @@ export const theme = createTheme({
             },
             '& input': {
               color: 'white', // изменение цвета текста внутри input
+              background: 'none',
             },
           },
           '& label': {
