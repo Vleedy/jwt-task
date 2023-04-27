@@ -1,0 +1,7 @@
+:root {
+    --black-color: rgb(0, 0, 0);
+    --main-gray: rgba(0, 0, 0, 70%);
+    --second-gray: rgba(0, 0, 0, 50%);
+    --light: rgba(255, 255, 255, 0.5);
+    --white: rgb(255, 255, 255);
+  }

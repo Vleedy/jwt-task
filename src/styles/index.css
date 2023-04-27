@@ -1,0 +1,35 @@
+@import './libs/_normalize.css';
+@import './libs/_variables.css';
+
+.authorization__form {
+  background-color: var(--main-gray);
+  width: 100%;
+  padding: 15px;
+  border-radius: 0.5rem;
+  border: solid 1px var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.authorization__title {
+  font-size: 30px;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.authorization__subtitle {
+  color: var(--light);
+  background: none;
+  border: none;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+.authorization__subtitle:hover {
+  color: var(--white);
+  cursor: pointer;
+  text-decoration: underline;
+}
