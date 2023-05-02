@@ -41,7 +41,6 @@ const AuthorizationUI: React.FC<RegistrationUIProps> = ({ setIsHaveAccount }) =>
         У меня уже есть аккаунт
       </button>
       <TextField
-        autoComplete="off"
         required
         fullWidth
         id="outlined-adornment-firstname"
@@ -54,7 +53,6 @@ const AuthorizationUI: React.FC<RegistrationUIProps> = ({ setIsHaveAccount }) =>
         helperText={formik.errors.firstName}
       />
       <TextField
-        autoComplete="off"
         required
         fullWidth
         name="lastName"
@@ -66,7 +64,6 @@ const AuthorizationUI: React.FC<RegistrationUIProps> = ({ setIsHaveAccount }) =>
         helperText={formik.errors.lastName}
       />
       <TextField
-        autoComplete="off"
         required
         fullWidth
         name="email"

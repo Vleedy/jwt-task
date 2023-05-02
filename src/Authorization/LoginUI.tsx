@@ -4,6 +4,7 @@ import { authorizationSchema } from '../utils/validation';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import AuthService from '../services/AuthService';
 
 interface LoginUIProps {
   setIsHaveAccount: Function;
@@ -22,8 +23,9 @@ const LoginUI: React.FC<LoginUIProps> = ({ setIsHaveAccount }) => {
       email: '',
       password: '',
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      const response = await AuthService.test();
+      console.log(response);
     },
     validationSchema: authorizationSchema,
     validateOnChange: false,
@@ -38,7 +40,6 @@ const LoginUI: React.FC<LoginUIProps> = ({ setIsHaveAccount }) => {
         Зарегистрироваться
       </button>
       <TextField
-        autoComplete="off"
         required
         fullWidth
         name="email"
