@@ -1,11 +1,11 @@
-import React from 'react';
-import LoginUI from './LoginUI';
+import { FC, useState } from 'react';
+import { LoginUI } from './LoginUI';
+import { RegistrationUI } from './RegistrationUI';
 import { Grid, ThemeProvider } from '@mui/material';
-import { theme } from '../styles/libs/Themes/Authorization';
-import RegistrationUI from './RegistrationUI';
+import { theme } from '../../styles/libs/Themes/Authorization';
 
-const Authorization = () => {
-  const [isHaveAccount, setIsHaveAccount] = React.useState<Boolean>(true);
+const Authorization: FC = () => {
+  const [isHaveAccount, setIsHaveAccount] = useState<Boolean>(true);
 
   return (
     <Grid sx={{ height: '100vh' }} container justifyContent="center" alignItems="center">

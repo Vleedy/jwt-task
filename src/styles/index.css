@@ -1,5 +1,5 @@
-@import './libs/_normalize.css';
-@import './libs/_variables.css';
+@import './_normalize.css';
+@import './_variables.css';
 
 .authorization__form {
   background-color: var(--main-gray);

@@ -23,7 +23,7 @@ export const registrationSchema = Yup.object({
     .oneOf([Yup.ref('password')], 'Пароли должны совпадать'),
 });
 
-export const authorizationSchema = Yup.object({
+export const loginSchema = Yup.object({
   email: Yup.string().email('Введите корректный email').required('Поле обязательно для заполнения'),
   password: Yup.string()
     .required('Поле обязательно для заполнения')
