@@ -3,9 +3,9 @@ import { useFormik } from 'formik';
 import { loginSchema } from '../../utils/validation';
 import { Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { testService } from '../../services/testService';
 import { CustomeField } from '../../components/Form/CustomeField';
 import { BoolChanger } from '../../types/TotalTypes';
+import { authApi } from '../../api/api';
 
 interface LoginUIProps {
   setIsHaveAccount: BoolChanger;
@@ -14,13 +14,11 @@ interface LoginUIProps {
 export const LoginUI: FC<LoginUIProps> = ({ setIsHaveAccount }) => {
   const formik = useFormik({
     initialValues: {
-      email: '',
+      login: '',
       password: '',
     },
     onSubmit: async (values) => {
-      const response = await testService.testLogin(values.email, values.password);
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('time', response.data.time);
+      await authApi.login({ login: values.login, password: values.password });
     },
     validationSchema: loginSchema,
     validateOnChange: false,
@@ -34,7 +32,7 @@ export const LoginUI: FC<LoginUIProps> = ({ setIsHaveAccount }) => {
       <button onClick={() => setIsHaveAccount(false)} className="authorization__subtitle">
         Зарегистрироваться
       </button>
-      <CustomeField label="Введите email" name="email" formik={formik} />
+      <CustomeField label="Введите имя пользователя" name="login" formik={formik} />
       <CustomeField label="Введите пароль" name="password" formik={formik} isPassword />
       <Button type="submit" variant="contained">
         Войти

@@ -5,7 +5,7 @@ export const theme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          color: 'rgba(255, 255, 255, 0.6)',
+          color: '#149997' /*'rgba(255, 255, 255, 0.6)'*/,
         },
         fontSizeLarge: {
           fontSize: '100px',
@@ -19,24 +19,26 @@ export const theme = createTheme({
           marginBottom: '15px',
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
-              borderColor: 'rgba(255, 255, 255, 0.6)',
+              borderColor: '#149997' /*'rgba(255, 255, 255, 0.6)'*/,
             },
             '&:hover fieldset': {
-              borderColor: 'rgb(255, 255, 255)',
+              borderColor: '#233043',
             },
             '&.Mui-focused fieldset': {
               border: '1px solid',
-              borderColor: 'rgb(255, 255, 255)',
+              borderColor: '#233043',
             },
             '& input': {
-              color: 'white', // изменение цвета текста внутри input
+              color: ' #575757', // изменение цвета текста внутри input
               background: 'none',
+              fontSize: '17px',
+              fontWeight: 300,
             },
           },
           '& label': {
-            color: 'white', // изменение цвета label
+            color: '#575757', // изменение цвета label
             '&.Mui-focused': {
-              color: 'white',
+              color: '#233043',
             }, // изменение цвета текста лейбла при фокусе
           },
         },
@@ -45,7 +47,7 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: 'rgba(255, 255, 255, 0.6)',
+      main: '#149997' /*'rgba(255, 255, 255, 0.6)'*/,
     },
   },
 });

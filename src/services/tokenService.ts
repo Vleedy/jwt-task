@@ -10,7 +10,7 @@ const tokenService = {
   refreshTokenIsValid(time: Nulleble<string>) {
     return !(!time || +time + REFRESH_THRESHOLD < Date.now() / 1000);
   },
-  accessTokenIsValid(token: string | null) {
+  accessTokenIsValid(token: Nulleble<string>) {
     return !(!token || jwt_decode<DecodedToken>(token).iat + REFRESH_THRESHOLD < Date.now() / 1000);
   },
   async refreshTokens() {
@@ -26,9 +26,9 @@ const tokenService = {
       window.location.href = '/login';
     }
   },
-  setItems(data: { token: string; time: string }): void {
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('time', data.time);
+  setItems(data: { access_token: string; refresh_token: string }): void {
+    localStorage.setItem('token', data.access_token);
+    localStorage.setItem('time', data.refresh_token);
   },
   getItems(): { token: Nulleble<string>; time: Nulleble<string> } {
     return { token: localStorage.getItem('token'), time: localStorage.getItem('time') };

@@ -15,7 +15,7 @@ export const RegistrationUI: React.FC<RegistrationUIProps> = ({ setIsHaveAccount
     initialValues: {
       firstName: '',
       lastName: '',
-      email: '',
+      userName: '',
       password: '',
       confirmPassword: '',
     },
@@ -36,7 +36,7 @@ export const RegistrationUI: React.FC<RegistrationUIProps> = ({ setIsHaveAccount
       </button>
       <CustomeField formik={formik} name="firstName" label="Ваше имя" />
       <CustomeField formik={formik} name="lastName" label="Ваша фамилия" />
-      <CustomeField formik={formik} name="email" label="Введите email" />
+      <CustomeField formik={formik} name="userName" label="Введите имя пользователя" />
       <CustomeField formik={formik} name="password" label="Введите пароль" isPassword />
       <CustomeField formik={formik} name="confirmPassword" label="Подтвердите пароль" isPassword />
       <Button type="submit" variant="contained">

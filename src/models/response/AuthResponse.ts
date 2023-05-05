@@ -1,6 +1,6 @@
 export interface AuthResponse {
-  token: string;
-  time: string;
+  access_token: string;
+  refresh_token: string;
 }
 
 export interface Data {

@@ -2,11 +2,11 @@
 @import './_variables.css';
 
 .authorization__form {
-  background-color: var(--main-gray);
+  background-color: white; /*var(--main-gray)*/
   width: 100%;
   padding: 15px;
   border-radius: 0.5rem;
-  border: solid 1px var(--light);
+  border: solid 1px #149997; /*var(--light)*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,21 +15,21 @@
 
 .authorization__title {
   font-size: 30px;
-  color: var(--white);
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 5px;
   text-align: center;
+  color: #233043;
+  font-weight: 300;
 }
 
 .authorization__subtitle {
-  color: var(--light);
+  color: #149997;
   background: none;
   border: none;
   font-weight: 100;
   margin-bottom: 20px;
 }
 .authorization__subtitle:hover {
-  color: var(--white);
   cursor: pointer;
   text-decoration: underline;
 }
